@@ -1,0 +1,43 @@
+<div class="container">
+	<div class="jumbotron">
+		<h1>Eat-Da-Burgers!!!</h1>
+	</div>
+
+
+	<div class="row">
+
+		<h2>Burgers to be Eaten!</h2>
+
+		<ul>
+			{{#each burgers}}
+				{{#unless devoured}}
+					{{> burgers/burger-block devoured=true}}
+				{{/unless}}
+			{{/each}}
+		</ul>
+
+		<h2>Devoured Burgers!</h2>
+
+		<ul>
+			{{#each burgers}}
+				{{#if devoured}}
+					{{> burgers/burger-block devoured=false}}
+				{{/if}}
+			{{/each}}
+		</ul>
+
+
+
+		<div class="col-md-10 col-md-offset-1">
+			<p class="lead">add burger & click submit</p>
+
+			<form class="create-update-form" action="burger/create" method="POST">
+				<div class="form-group">
+					<textarea class="form-control input-lg" type="text" name="burger_name" row="3"></textarea>
+				</div>
+				<button class="btn btn-default btn-lg" type="submit">Submit</button>
+			</form>
+		</div>
+
+	</div>
+</div>
