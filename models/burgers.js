@@ -1,23 +1,24 @@
 var orm = require("../config/orm");
 
+var table = "burgers"
 var burger = {
     selectAll: function (cb) {
-        orm.selectAll("burgers", function (res) {
+        orm.selectAll(table, function (res) {
             cb(res);
         });
     },
     insertOne: function(cols, vals, cb) {
-        orm.selectAll("burgers", cols, vals, function(res){
+        orm.insertOne(table, cols, vals, function(res){
             cb(res)
         });
     },
     updateOne: function(ObjColVals, condition, cb) {
-        orm.selectAll("burgers", ObjColVals, condition, function(res){
+        orm.updateOne(table, ObjColVals, condition, function(res){
             cb(res)
         });
     },
     deleteOne: function(condition, cb) {
-        orm.selectAll("burgers",condition, function(res){
+        orm.delete(table ,condition, function(res){
             cb(res)
         });
     }

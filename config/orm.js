@@ -10,13 +10,13 @@ function createQmarks(num){
 
 function translateSQL(obj) {
     var arr = [];
-    for (var key in ob) {
-        var value = ob[key];
-        if (Object.hasOwnProperty.call(ob, key)) {
+    for (var key in obj) {
+        var value = obj[key];
+        if (Object.hasOwnProperty.call(obj, key)) {
             if(typeof value === "string" && value.indexOf(" " >+ 0)) {
                 value = "'" + value + "'"
             }
-            arr.push(key + "e" + value)
+            arr.push(key + "=" + value)
         }
     }
     return arr.toString();
