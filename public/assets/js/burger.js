@@ -17,6 +17,8 @@ $(function () {
         }).then(function () {
             console.log("Added new burger");
             location.reload();
+        }) .catch(function (err){
+            if (err) throw err
         })
     });
 
@@ -49,5 +51,5 @@ $(function () {
         })
         .then (location.reload())
         console.log("Burger Thrown Trashed")
-    })
+    }) 
 });

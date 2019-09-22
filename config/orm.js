@@ -42,7 +42,7 @@ var orm = {
         var dbQuery = "INSERT INTO " + table + " (" + cols.toString() + ") " + "VALUES (" + createQmarks(vals.length) + ") ";
     
         console.log(dbQuery);
-        connection.query(dbQuery, vals, function(err, result){
+        connection.query(dbQuery, vals, function(err, res){
             if (err){
                 throw err;
             }
@@ -54,7 +54,7 @@ var orm = {
         var dbQuery = "UPDATE " + table + " SET " + translateSQL(objColsVals) + " WHERE " + condition;
         
         console.log(dbQuery);
-        connection.query(dbQuery, function(err, result){
+        connection.query(dbQuery, function(err, res){
             if (err){
                 throw err;
             }
